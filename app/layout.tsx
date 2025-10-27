@@ -8,11 +8,6 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'EPC - ENPO Maurice Audin ',
   description: 'Site officiel du Engineering Pioneers Club - École Nationale Polytechnique d\'Oran Maurice Audin',
-  icons: {
-    icon: '/favicon.ico.png',
-    // Tu peux aussi ajouter d'autres tailles :
-    apple: '/apple-touch-icon.png',
-  },
 }
 
 export default function RootLayout({

@@ -59,19 +59,21 @@ export default async function MembresPage({ searchParams }: { searchParams: { de
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">
-                EPC
-              </div>
+              <img 
+  src="/logo_epc_color.png" 
+  alt="Logo EPC" 
+  className="w-10 h-10 object-contain"
+/>
               <div>
                 <h1 className="text-xl font-bold text-gray-800">EPC - ENPO Maurice Audin</h1>
               </div>
             </div>
             <nav className="flex gap-6">
-              <Link href="/" className="text-gray-700 hover:text-emerald-600">Accueil</Link>
-              <Link href="/membres" className="text-emerald-600 font-semibold">Membres</Link>
-              <Link href="/departements" className="text-gray-700 hover:text-emerald-600">Départements</Link>
-              <Link href="/evenements" className="text-gray-700 hover:text-emerald-600">Événements</Link>
-              <Link href="/projets" className="text-gray-700 hover:text-emerald-600">Projets</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600">Accueil</Link>
+              <Link href="/membres" className="text-blue-600 font-semibold">Membres</Link>
+              <Link href="/departements" className="text-gray-700 hover:text-blue-600">Départements</Link>
+              <Link href="/evenements" className="text-gray-700 hover:text-blue-600">Événements</Link>
+              <Link href="/projets" className="text-gray-700 hover:text-blue-600">Projets</Link>
             </nav>
           </div>
         </div>
@@ -88,7 +90,7 @@ export default async function MembresPage({ searchParams }: { searchParams: { de
             </p>
           </div>
           <div className="flex items-center gap-4">
-            <span className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full font-semibold">
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-semibold">
               {membres.length} membre{membres.length > 1 ? 's' : ''}
             </span>
             {searchParams.departement && (
@@ -110,7 +112,7 @@ export default async function MembresPage({ searchParams }: { searchParams: { de
               href="/membres"
               className={`px-4 py-2 rounded-lg ${
                 !searchParams.departement 
-                  ? 'bg-emerald-600 text-white' 
+                  ? 'bg-blue-600 text-white' 
                   : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               }`}
             >
@@ -122,7 +124,7 @@ export default async function MembresPage({ searchParams }: { searchParams: { de
                 href={`/membres?departement=${stat.departement}`}
                 className={`px-4 py-2 rounded-lg ${
                   searchParams.departement === stat.departement
-                    ? 'bg-emerald-600 text-white'
+                    ? 'bg-blue-600 text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
@@ -133,18 +135,17 @@ export default async function MembresPage({ searchParams }: { searchParams: { de
         </div>
 
         {/* Liste membres */}
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-  {membres.map((membre) => (
-    <div key={membre.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-      <div className="text-center">
-        <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
-          <span className="text-white font-bold text-xl">
-            {membre.nom.split(' ').map((n: string) => n[0]).join('')}
-          </span>
-        </div>
-        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {membres.map((membre) => (
+            <div key={membre.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">
+                    {membre.nom.split(' ').map((n: string) => n[0]).join('')}
+                  </span>
+                </div>
                 <h3 className="text-xl font-semibold text-gray-800">{membre.nom}</h3>
-                <p className="text-emerald-600 mb-1">{membre.role}</p>
+                <p className="text-blue-600 mb-1">{membre.role}</p>
                 <p className="text-gray-500 text-sm mb-2">{membre.filiere} - {membre.niveau}</p>
                 {membre.departement && (
                   <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-2 ${getDepartementColor(membre.departement)}`}>

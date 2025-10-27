@@ -59,19 +59,21 @@ export default async function DepartementsPage() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg flex items-center justify-center text-white font-bold">
-                EPC
-              </div>
+              <img 
+  src="/logo_epc_color.png" 
+  alt="Logo EPC" 
+  className="w-10 h-10 object-contain"
+/>
               <div>
                 <h1 className="text-xl font-bold text-gray-800">EPC - ENPO Maurice Audin</h1>
               </div>
             </div>
             <nav className="flex gap-6">
-              <Link href="/" className="text-gray-700 hover:text-emerald-600">Accueil</Link>
-              <Link href="/membres" className="text-gray-700 hover:text-emerald-600">Membres</Link>
-              <Link href="/departements" className="text-emerald-600 font-semibold">Départements</Link>
-              <Link href="/evenements" className="text-gray-700 hover:text-emerald-600">Événements</Link>
-              <Link href="/projets" className="text-gray-700 hover:text-emerald-600">Projets</Link>
+              <Link href="/" className="text-gray-700 hover:text-blue-600">Accueil</Link>
+              <Link href="/membres" className="text-gray-700 hover:text-blue-600">Membres</Link>
+              <Link href="/departements" className="text-blue-600 font-semibold">Départements</Link>
+              <Link href="/evenements" className="text-gray-700 hover:text-blue-600">Événements</Link>
+              <Link href="/projets" className="text-gray-700 hover:text-blue-600">Projets</Link>
             </nav>
           </div>
         </div>
